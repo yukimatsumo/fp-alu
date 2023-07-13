@@ -1,0 +1,83 @@
+
+### n trials of uint2_t multiplication
+(.env) yuki@ono-imac binary % python uint.py -n 2
+test elapsed_time: 1278727 [ns] = 1.278727 [ms]
+    n: 10 [trials]
+avg_t: 127872.7 [ns] = 0.1278727 [ms]
+
+AND: 40, OR: 18, NOT: 12, NAND: 12, NOR: 0, XOR: 12
+SFQ-AND: 16, SFQ-OR: 6, SFQ-XOR: 12
+
+
+### n trials of uint3_t multiplication (for fp8 E5M2 by nvidia)
+(.env) yuki@ono-imac binary % python uint.py -n 3
+test elapsed_time: 5945805 [ns] = 5.945805 [ms]
+    n: 36 [trials]
+avg_t: 165161.25 [ns] = 0.16516125 [ms]
+
+AND: 81, OR: 36, NOT: 24, NAND: 24, NOR: 0, XOR: 24
+SFQ-AND: 33, SFQ-OR: 12, SFQ-XOR: 24
+
+
+### n trials of uint4_t multiplication (for fp8 E4M3 by nvidia)
+(.env) yuki@ono-imac binary % python uint.py -n 4
+test elapsed_time: 34883215 [ns] = 0.034883215 [sec]
+    n: 136 [trials]
+avg_t: 256494.22794117648 [ns] = 0.2564942279411765 [ms]
+
+AND: 136, OR: 60, NOT: 40, NAND: 40, NOR: 0, XOR: 40
+SFQ-AND: 56, SFQ-OR: 20, SFQ-XOR: 40
+
+
+### n trials of uint5_t multiplication
+(.env) yuki@ono-imac binary % python uint.py -n 5
+test elapsed_time: 190790926 [ns]
+    n: 528 [trials]
+avg_t: 361346.45075757575 [ns]
+
+AND: 205, OR: 90, NOT: 60, NAND: 60, NOR: 0, XOR: 60
+SFQ-AND: 85, SFQ-OR: 30, SFQ-XOR: 60
+
+
+### n trials of uint6_t multiplication
+(.env) yuki@ono-imac binary % python uint.py -n 6
+test elapsed_time: 1108229073 [ns] = 1.108229073 [sec]
+    n: 2080 [trials]
+avg_t: 532802.4389423077 [ns] = 0.5328024389423077 [ms]
+
+AND: 288, OR: 126, NOT: 84, NAND: 84, NOR: 0, XOR: 84
+SFQ-AND: 120, SFQ-OR: 42, SFQ-XOR: 84
+
+
+### n trials of uint8_t multiplication (for bfloat16 by google)
+(.env) yuki@ono-imac binary % python uint.py -n 8
+test elapsed_time: 27539261650 [ns] = 27.539261650 [sec]
+    n: 32896 [trials]
+avg_t: 837161.407161965 [ns] = 0.837161407161965 [ms]
+
+AND: 496, OR: 216, NOT: 144, NAND: 144, NOR: 0, XOR: 144
+SFQ-AND: 208, SFQ-OR: 72, SFQ-XOR: 144
+
+
+### n trials of uint9_t multiplication
+(.env) yuki@ono-imac binary % python uint.py -n 9
+test elapsed_time: 131072284897 [ns] = 131.072284897 [sec]
+    n: 131328 [trials]
+avg_t: 998052.8516158017 [ns] = 0.9980528516158017 [ms]
+
+AND: 621, OR: 270, NOT: 180, NAND: 180, NOR: 0, XOR: 180
+SFQ-AND: 261, SFQ-OR: 90, SFQ-XOR: 180
+
+
+### n trials of uint11_t multiplication (for fp16 follow IEEE 754 half precision)
+(.env) yuki@ono-imac binary % python uint.py -n 11
+test elapsed_time: 3043334823271 [ns] = 3043.334823271 [sec]
+    n: 2098176 [trials]
+avg_t: 1450466.8928016524 [ns] = 1.4504668928016524 [ms]
+
+AND: 913, OR: 396, NOT: 264, NAND: 264, NOR: 0, XOR: 264
+SFQ-AND: 385, SFQ-OR: 132, SFQ-XOR: 264
+
+
+### n trials of uint24_t multiplication (for fp32 follow IEEE 754 single precision)
+(.env) yuki@ono-imac binary % python uint.py -n 24
