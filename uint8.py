@@ -2,7 +2,8 @@ import numpy as np
 from typing import Tuple
 
 from util import *
-from gate import *
+from gate_e import *
+# from gate import *
 
 class Uint8(Ugate):
     def __init__(self, nbit=8):
@@ -150,11 +151,16 @@ class Uint8(Ugate):
 def main():
     g = Uint8()
 
+    # for i in range(0, 256):
+    #     for j in range(0, i+1):
+    #         d, b = g._ui8mul(i, j)
+    #         if b[0] != "1" and b[9] != "0":
+    #             print(f"{i:>3} x {j:>3} = {d:>5} ({b})")
+
     for i in range(0, 256):
-        for j in range(0, i+1):
+        for j in range(0, 256):
             d, b = g._ui8mul(i, j)
-            if b[0] != "1" and b[9] != "0":
-                print(f"{i:>3} x {j:>3} = {d:>5} ({b})")
+            print(f"{i:>3} x {j:>3} = {d:>5} ({b})")
 
 if __name__ == '__main__':
     main()
