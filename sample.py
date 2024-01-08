@@ -1,13 +1,14 @@
 import torch, torchinfo
 import torchvision.models as models
-import matplotlib.pyplot as plt
-from torchvision.models.alexnet import AlexNet, AlexNet_Weights
-from torchvision.models.vgg import VGG
-from torchvision.models.googlenet import GoogLeNet
-from torchvision.models.resnet import ResNet
+# import matplotlib.pyplot as plt
+# from torchvision.models.alexnet import AlexNet, AlexNet_Weights
+# from torchvision.models.vgg import VGG
+# from torchvision.models.googlenet import GoogLeNet
+# from torchvision.models.resnet import ResNet
+
 
 # モデルの定義
-# model = models.alexnet() #ooo
+model = models.alexnet() #ooo
 # model = models.vgg11()
 # model = models.vgg13()
 # model = models.vgg16() #ooo
@@ -17,10 +18,10 @@ from torchvision.models.resnet import ResNet
 # model = models.resnet50() #ooo
 # model = models.resnet101()
 # model = models.resnet152()
-model = models.densenet121()
-# model = models.densenet161()
+# model = models.densenet121()
 # model = models.densenet169()
 # model = models.densenet201()
+# model = models.densenet161() #after 201
 # model = models.mobilenet_v2() #ooo
 # model = models.efficientnet_b0() #224
 # model = models.efficientnet_b1() #240
@@ -30,11 +31,15 @@ model = models.densenet121()
 # model = models.efficientnet_b5() #456
 # model = models.efficientnet_b6() #528
 # model = models.efficientnet_b7() #600
+# model = models.efficientnet_v2_s()
+# model = models.efficientnet_v2_m()
 # model = models.efficientnet_v2_l()
 torchinfo.summary(model, (1, 3, 224, 224))
 
 # 学習済みモデルをロード
 # alexnet = models.alexnet(weights=AlexNet_Weights.DEFAULT)
+
+
 
 # モデルのパラメータを取得
 # params = list(alexnet.parameters())
