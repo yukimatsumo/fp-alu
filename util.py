@@ -1,5 +1,4 @@
-import argparse
-import time 
+import argparse, time, math
 from functools import wraps
 import numpy as np
 from numpy import unsignedinteger
@@ -14,6 +13,40 @@ def time_measure(func :Any) -> Any:
         print(f"{func.__name__} elapsed_time: {elapsed_time} [ns]")
         return res, elapsed_time
     return wrapper
+
+def SIstr(num):
+    l = math.log(num,10)
+    if l >= 12:
+        return '{:.0f}'.format(num*10**-12) + " T"
+    elif 12 > l and l >= 9:
+        return '{:.0f}'.format(num*10**-9) + " G"
+    elif 9 > l and l >= 6:
+        return '{:.0f}'.format(num*10**-6) + " M"
+    elif 6 > l and l >= 3:
+        return '{:.0f}'.format(num*10**-3) + " k"
+    elif 3 > l and l >= 2:
+        return '{:.0f}'.format(num) + " "
+    elif 2 > l and l >= 1:
+        return '{:.1f}'.format(num) + " " 
+    elif l >= -1:
+        return '{:.2f}'.format(num) + " "
+    elif -1 > l and l >= -4:
+        if num >= 1e-3:
+            return '{:.2f}'.format(num*10**3) + " m"
+        elif num < 1e-3:
+            return '{:.0f}'.format(num*10**6) + " u"
+    elif -4 > l and l >= -7:
+        return '{:.2f}'.format(num*10**6) + " u"
+    elif -7 > l and l >= -10:
+        return '{:.2f}'.format(num*10**9) + " n"
+    elif -10 > l and l >= -13:
+        return '{:.2f}'.format(num*10**12) + " p"
+    elif -13 > l and l >= -16:
+        return '{:.2f}'.format(num*10**15) + " f"
+    elif -16 > l and l >= -19:
+        return '{:.2f}'.format(num*10**18) + " a"
+    elif -19 > l and l >= -22:
+        return '{:.2f}'.format(num*10**21) + " z"
 
 # TODO: FIXME: B, UINT4, UINT8, UINT24, BFLOAT16, FLOAT128
 B = np.uint8
